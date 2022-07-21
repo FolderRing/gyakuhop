@@ -13,7 +13,7 @@ local r2tp = false
 local root = game.Players.LocalPlayer.Character.HumanoidRootPart
 wait(0.5)
 gyakuhop.Name = "gyakuhop"
-gyakuhop.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+gyakuhop.Parent = game.CoreGui
 wait(0.5)
 holder.Name = "holder"
 holder.Parent = gyakuhop
