@@ -11,10 +11,10 @@ local l2tp = false
 local r1tp = false
 local r2tp = false
 local root = game.Players.LocalPlayer.Character.HumanoidRootPart
-
+wait(0.5)
 gyakuhop.Name = "gyakuhop"
 gyakuhop.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
+wait(0.5)
 holder.Name = "holder"
 holder.Parent = gyakuhop
 holder.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
@@ -23,7 +23,7 @@ holder.Position = UDim2.new(0.377737224, 0, 0.259557337, 0)
 holder.Size = UDim2.new(0, 268, 0, 238)
 holder.Active = true
 holder.Draggable = true
-
+wait(0.5)
 label.Name = "label"
 label.Parent = holder
 label.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
@@ -33,7 +33,7 @@ label.Font = Enum.Font.GothamBlack
 label.Text = "Nigeria"
 label.TextColor3 = Color3.fromRGB(255, 255, 255)
 label.TextSize = 26.000
-
+wait(0.5)
 l1b.Name = "l1b"
 l1b.Parent = holder
 l1b.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -49,7 +49,7 @@ l1b.MouseButton1Up:Connect(function()
 	r1tp = false
 	r2tp = false
 end)
-
+wait(0.5)
 l2b.Name = "l2b"
 l2b.Parent = holder
 l2b.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -65,7 +65,7 @@ l2b.MouseButton1Up:Connect(function()
 	r1tp = false
 	r2tp = false
 end)
-
+wait(0.5)
 r1b.Name = "r1b"
 r1b.Parent = holder
 r1b.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -81,7 +81,7 @@ r1b.MouseButton1Up:Connect(function()
 	r1tp = true
 	r2tp = false
 end)
-
+wait(0.5)
 r2b.Name = "r2b"
 r2b.Parent = holder
 r2b.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -97,7 +97,7 @@ r2b.MouseButton1Up:Connect(function()
 	r1tp = false
 	r2tp = true
 end)
-
+wait(0.5)
 hop.Name = "hop"
 hop.Parent = holder
 hop.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -112,29 +112,34 @@ hop.MouseButton1Up:Connect(function()
 
 	module:Teleport(game.PlaceId)
 end)
-
+wait(0.5)
 local cps = 15
-
+wait(0.5)
 while l1tp do
 	root.Position = Vector3.new(-638, 68, 203)
+	wait(0.05)
 end
 
 while r1tp do
 	root.Position = Vector3.new(-642, 68, 341)
+	wait(0.05)
 end
 
 while l2tp do
 	root.Position = Vector3.new(-525, 68, 207)
+	wait(0.05)
 end
 
 while r2tp do
 	root.Position = Vector3.new(-519, 68, 342)
+	wait(0.05)
 end
-
-
+wait(0.5)
 getgenv().clicker = true 
-
+wait(0.5)
 while clicker do
 	mouse1click()
 	wait(1/cps)
 end
+
+print("gyaku hop loaded")
