@@ -1,0 +1,140 @@
+local gyakuhop = Instance.new("ScreenGui")
+local holder = Instance.new("Frame")
+local label = Instance.new("TextLabel")
+local l1b = Instance.new("TextButton")
+local l2b = Instance.new("TextButton")
+local r1b = Instance.new("TextButton")
+local r2b = Instance.new("TextButton")
+local hop = Instance.new("TextButton")
+local l1tp = true
+local l2tp = false
+local r1tp = false
+local r2tp = false
+local root = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+gyakuhop.Name = "gyakuhop"
+gyakuhop.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+holder.Name = "holder"
+holder.Parent = gyakuhop
+holder.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+holder.BorderSizePixel = 0
+holder.Position = UDim2.new(0.377737224, 0, 0.259557337, 0)
+holder.Size = UDim2.new(0, 268, 0, 238)
+holder.Active = true
+holder.Draggable = true
+
+label.Name = "label"
+label.Parent = holder
+label.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+label.BorderSizePixel = 0
+label.Size = UDim2.new(0, 268, 0, 41)
+label.Font = Enum.Font.GothamBlack
+label.Text = "Nigeria"
+label.TextColor3 = Color3.fromRGB(255, 255, 255)
+label.TextSize = 26.000
+
+l1b.Name = "l1b"
+l1b.Parent = holder
+l1b.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+l1b.Position = UDim2.new(0, 0, 0.172268912, 0)
+l1b.Size = UDim2.new(0, 67, 0, 50)
+l1b.Font = Enum.Font.SourceSans
+l1b.Text = "L1"
+l1b.TextColor3 = Color3.fromRGB(0, 0, 0)
+l1b.TextSize = 14.000
+l1b.MouseButton1Up:Connect(function()
+	l1tp = true
+	l2tp = false
+	r1tp = false
+	r2tp = false
+end)
+
+l2b.Name = "l2b"
+l2b.Parent = holder
+l2b.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+l2b.Position = UDim2.new(0.75, 0, 0.172268912, 0)
+l2b.Size = UDim2.new(0, 67, 0, 50)
+l2b.Font = Enum.Font.SourceSans
+l2b.Text = "L2"
+l2b.TextColor3 = Color3.fromRGB(0, 0, 0)
+l2b.TextSize = 14.000
+l2b.MouseButton1Up:Connect(function()
+	l1tp = false
+	l2tp = true
+	r1tp = false
+	r2tp = false
+end)
+
+r1b.Name = "r1b"
+r1b.Parent = holder
+r1b.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+r1b.Position = UDim2.new(0, 0, 0.453781545, 0)
+r1b.Size = UDim2.new(0, 67, 0, 50)
+r1b.Font = Enum.Font.SourceSans
+r1b.Text = "R1"
+r1b.TextColor3 = Color3.fromRGB(0, 0, 0)
+r1b.TextSize = 14.000
+r1b.MouseButton1Up:Connect(function()
+	l1tp = false
+	l2tp = false
+	r1tp = true
+	r2tp = false
+end)
+
+r2b.Name = "r2b"
+r2b.Parent = holder
+r2b.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+r2b.Position = UDim2.new(0.75, 0, 0.453781545, 0)
+r2b.Size = UDim2.new(0, 67, 0, 50)
+r2b.Font = Enum.Font.SourceSans
+r2b.Text = "R2"
+r2b.TextColor3 = Color3.fromRGB(0, 0, 0)
+r2b.TextSize = 14.000
+r2b.MouseButton1Up:Connect(function()
+	l1tp = false
+	l2tp = false
+	r1tp = false
+	r2tp = true
+end)
+
+hop.Name = "hop"
+hop.Parent = holder
+hop.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+hop.Position = UDim2.new(0.12686567, 0, 0.747899175, 0)
+hop.Size = UDim2.new(0, 200, 0, 50)
+hop.Font = Enum.Font.SourceSans
+hop.Text = "server hop"
+hop.TextColor3 = Color3.fromRGB(0, 0, 0)
+hop.TextSize = 14.000
+hop.MouseButton1Up:Connect(function()
+	local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
+
+	module:Teleport(game.PlaceId)
+end)
+
+local cps = 15
+
+while l1tp do
+	root.Position = Vector3.new(-638, 68, 203)
+end
+
+while r1tp do
+	root.Position = Vector3.new(-642, 68, 341)
+end
+
+while l2tp do
+	root.Position = Vector3.new(-525, 68, 207)
+end
+
+while r2tp do
+	root.Position = Vector3.new(-519, 68, 342)
+end
+
+
+getgenv().clicker = true 
+
+while clicker do
+	mouse1click()
+	wait(1/cps)
+end
